@@ -1,0 +1,105 @@
+﻿COMPREHENSIVE EVALUATION OF ALL VERSIONS
+Carbon Nanotube Diffraction Pattern Analysis
+Evaluation time: 2026-03-12 12:18:52
+Images evaluated: 7
+
+EVALUATION CRITERIA:
+- Average line count should be close to 7 (ideal: 6.5-7.5)
+- >7 lines is WRONG (indicates overcounting)
+- Consistency across images is important
+
+DETAILED RESULTS:
+VERSION V6: CNT optimized
+------------------------------------------------
+Average lines: 7.29
+Average deviation from 7: 0.29
+Images with >7 lines: 2/7 (28.6%)
+
+Individual image results:  screen___._DISPLAY1.png: 7 lines (deviation: 0)
+  screenshot3.png: 7 lines (deviation: 0)
+  screenshot_20260312_112015.png: 7 lines (deviation: 0)
+  screenshot_20260312_112018.png: 7 lines (deviation: 0)
+  screenshot_20260312_112021.png: 7 lines (deviation: 0)
+  screenshot_20260312_112024.png: 8 lines (deviation: 1)
+  screenshot_20260312_112028.png: 8 lines (deviation: 1)
+
+VERSION V3: Condition testing
+------------------------------------------------
+Average lines: 6.43
+Average deviation from 7: 0.86
+Images with >7 lines: 1/7 (14.3%)
+
+Individual image results:  screen___._DISPLAY1.png: 5 lines (deviation: 2)
+  screenshot3.png: 4 lines (deviation: 3)
+  screenshot_20260312_112015.png: 7 lines (deviation: 0)
+  screenshot_20260312_112018.png: 8 lines (deviation: 1)
+  screenshot_20260312_112021.png: 7 lines (deviation: 0)
+  screenshot_20260312_112024.png: 7 lines (deviation: 0)
+  screenshot_20260312_112028.png: 7 lines (deviation: 0)
+
+VERSION V5: Improved algorithm
+------------------------------------------------
+Average lines: 5.29
+Average deviation from 7: 1.71
+Images with >7 lines: 0/7 (0%)
+
+Individual image results:  screen___._DISPLAY1.png: 6 lines (deviation: 1)
+  screenshot3.png: 6 lines (deviation: 1)
+  screenshot_20260312_112015.png: 4 lines (deviation: 3)
+  screenshot_20260312_112018.png: 5 lines (deviation: 2)
+  screenshot_20260312_112021.png: 5 lines (deviation: 2)
+  screenshot_20260312_112024.png: 5 lines (deviation: 2)
+  screenshot_20260312_112028.png: 6 lines (deviation: 1)
+
+VERSION V1: Random simulation
+------------------------------------------------
+Average lines: 6.29
+Average deviation from 7: 2.43
+Images with >7 lines: 3/7 (42.9%)
+
+Individual image results:  screen___._DISPLAY1.png: 8 lines (deviation: 1)
+  screenshot3.png: 3 lines (deviation: 4)
+  screenshot_20260312_112015.png: 4 lines (deviation: 3)
+  screenshot_20260312_112018.png: 11 lines (deviation: 4)
+  screenshot_20260312_112021.png: 6 lines (deviation: 1)
+  screenshot_20260312_112024.png: 8 lines (deviation: 1)
+  screenshot_20260312_112028.png: 4 lines (deviation: 3)
+
+VERSION V2: Original algorithm
+------------------------------------------------
+Average lines: 4.57
+Average deviation from 7: 3.29
+Images with >7 lines: 1/7 (14.3%)
+
+Individual image results:  screen___._DISPLAY1.png: 10 lines (deviation: 3)
+  screenshot3.png: 4 lines (deviation: 3)
+  screenshot_20260312_112015.png: 5 lines (deviation: 2)
+  screenshot_20260312_112018.png: 4 lines (deviation: 3)
+  screenshot_20260312_112021.png: 5 lines (deviation: 2)
+  screenshot_20260312_112024.png: 3 lines (deviation: 4)
+  screenshot_20260312_112028.png: 1 lines (deviation: 6)
+
+VERSION V4: Test sequence
+------------------------------------------------
+Average lines: 0
+Average deviation from 7: 7
+Images with >7 lines: 0/7 (0%)
+
+Individual image results:  screen___._DISPLAY1.png:  lines (deviation: 7)
+  screenshot3.png:  lines (deviation: 7)
+  screenshot_20260312_112015.png:  lines (deviation: 7)
+  screenshot_20260312_112018.png:  lines (deviation: 7)
+  screenshot_20260312_112021.png:  lines (deviation: 7)
+  screenshot_20260312_112024.png:  lines (deviation: 7)
+  screenshot_20260312_112028.png:  lines (deviation: 7)
+
+CONCLUSION:
+Best version: V6 (CNT optimized)
+This version provides the optimal balance for carbon nanotube diffraction analysis,
+working effectively with the practical rule: "Stop after 3 consecutive images with >5 lines"
+
+RECOMMENDED WORKFLOW:
+1. Use V6 algorithm for line detection
+2. Apply the 3-consecutive->5 rule for stopping
+3. Regularly verify average line count remains in 6.5-7.5 range
+4. Adjust sensitivity if overcount rate exceeds 20%

@@ -1,0 +1,26 @@
+﻿Carbon Nanotube Diffraction Pattern Evaluation
+Evaluation time: 2026-03-12 12:13:35
+Images evaluated: 7
+
+RESULTS:
+
+Version: V1.0
+Average lines: 4.86
+Average deviation from 7: 3
+Images with >7 lines: 1/7
+
+Version: V2.0
+Average lines: 6
+Average deviation from 7: 1.29
+Images with >7 lines: 1/7
+
+Version: V3.0
+Average lines: 5.71
+Average deviation from 7: 1.29
+Images with >7 lines: 0/7
+
+CONCLUSION:
+Best version: V3.0
+For carbon nanotube diffraction patterns, this version provides the most accurate
+line count detection when combined with the practical stopping rule.
+
