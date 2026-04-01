@@ -1,169 +1,138 @@
-# 1D Materials Analysis Tool
+# CNT Analysis Tool
 
-A comprehensive desktop application for analyzing one-dimensional materials, built with PyQt5 and Python.
+A desktop application for carbon nanotube (CNT) analysis, specifically designed for comparing and visualizing Raman and absorption spectra.
 
-## 📋 Overview
+## Overview
 
-The 1D Materials Analysis Tool is a user-friendly desktop application designed for researchers and scientists working with one-dimensional materials such as carbon nanotubes (CNTs), nanowires, and other nanostructures. The tool provides multiple analysis modules for different material characterization techniques.
+This tool is built for researchers working with carbon nanotubes (CNTs) to analyze and compare spectroscopic data. It provides a user-friendly interface for loading experimental data, visualizing spectra, and performing comparative analysis.
 
-## ✨ Features
+## Features
 
-### Core Analysis Modules
-- **Raman Spectroscopy Analysis** - Process and analyze Raman spectra of 1D materials
-- **Absorption Spectroscopy** - Analyze optical absorption properties
-- **Transmittance Analysis** - Calculate and visualize transmittance spectra
+### Core Functionality
+- **Raman Spectroscopy Analysis** - Import and analyze Raman spectra from TXT files
+- **Absorption Spectroscopy** - Import and analyze absorption data from Excel files
+- **Comparative Curve Plotting** - Overlay multiple spectra for comparison
+- **Peak Detection** - Automatic peak identification in Raman spectra
+- **Data Normalization** - Normalize spectra for better comparison
 
-### Key Features
-- **Modern GUI** - Built with PyQt5 and QFluentWidgets for a professional interface
-- **Multi-page Design** - Organized workflow with dedicated pages for each analysis type
-- **Data Visualization** - Interactive plots and charts for result presentation
-- **Batch Processing** - Support for analyzing multiple samples efficiently
-- **Export Capabilities** - Save results in various formats (CSV, PNG, PDF)
+### File Format Support
+- **Raman Data**: TXT files (two-column format: wavenumber vs intensity)
+- **Absorption Data**: Excel files (wavelength vs absorbance)
 
-## 🚀 Installation
+### Visualization
+- Interactive matplotlib plots
+- Multiple curve overlay
+- Customizable axis labels and titles
+- Export plots as images
+
+## Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.8+
 - PyQt5
-- NumPy, SciPy, Matplotlib
-- QFluentWidgets
+- pandas, numpy, matplotlib, scipy
+- qfluentwidgets
 
-### Installation Steps
+### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/dachuanx/cnt_raman_tool.git
+cd cnt_raman_tool
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/dachuanx/cnt_raman_tool.git
-   cd cnt_raman_tool
-   ```
+# Run the application
+python 1Dtool.py
+```
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application:**
-   ```bash
-   python 1Dtool.py
-   ```
-
-### For Windows Users
-A pre-built executable is available in the `dist/` directory:
+### Windows Users
+A pre-built executable is available in the `dist/` folder:
 - Download `1D_Materials_Analysis_Tool.exe`
 - Double-click to run (no Python installation required)
 
-## 📁 Project Structure
+## Usage
+
+### 1. Launch the Application
+Run `1Dtool.py` or the executable file.
+
+### 2. Raman Analysis
+- Navigate to the "Raman" tab
+- Click "Import Raman Data" to load TXT files
+- Multiple files can be loaded for comparison
+- Use peak detection to identify characteristic peaks (D-band, G-band, etc.)
+- Adjust visualization settings as needed
+
+### 3. Absorption Analysis
+- Navigate to the "Absorption" tab
+- Click "Import Absorption Data" to load Excel files
+- Compare absorption spectra from different samples
+- Analyze optical properties of CNTs
+
+### 4. Data Comparison
+- Overlay multiple spectra in the same plot
+- Use normalization for fair comparison
+- Export comparison plots for reports
+
+## Project Structure
 
 ```
-1DMaterialsAnalysisTool/
-├── 1Dtool.py              # Main application entry point
-├── README.md              # This documentation
-├── .gitignore            # Git ignore rules
-├── dist/                 # Distribution directory
-│   └── 1D_Materials_Analysis_Tool.exe  # Windows executable
-└── pages/                # Analysis modules
-    ├── __init__.py       # Package initialization
-    ├── page_raman.py     # Raman spectroscopy analysis
-    ├── page_absorption.py # Absorption spectroscopy analysis
-    └── page_transmittance.py # Transmittance analysis
+cnt_raman_tool/
+├── 1Dtool.py              # Main application
+├── pages/                 # Analysis modules
+│   ├── page_raman.py     # Raman spectroscopy interface
+│   ├── page_absorption.py # Absorption spectroscopy interface
+│   └── page_transmittance.py # Placeholder for future features
+├── dist/                  # Distribution files
+│   └── 1D_Materials_Analysis_Tool.exe
+└── .gitignore            # Git ignore rules
 ```
 
-## 🔧 Usage
+## Technical Details
 
-1. **Launch the application** by running `1Dtool.py` or the executable
-2. **Select analysis type** from the navigation sidebar
-3. **Load your data** (supports common spectroscopy file formats)
-4. **Configure analysis parameters** specific to your material
-5. **Run analysis** and visualize results
-6. **Export results** for further processing or reporting
+### Raman Analysis Module
+- **File Format**: TXT files with two columns (wavenumber, intensity)
+- **Features**:
+  - Multiple file loading and comparison
+  - Automatic peak detection using scipy.signal.find_peaks
+  - Baseline correction
+  - Peak labeling and annotation
+- **Output**: Comparative plots showing multiple Raman spectra
 
-### Supported Data Formats
-- CSV files (.csv)
-- Text files (.txt, .dat)
-- Excel files (.xlsx, .xls)
-- Common spectroscopy instrument formats
+### Absorption Analysis Module
+- **File Format**: Excel files (.xlsx, .xls)
+- **Features**:
+  - Excel file parsing using pandas
+  - Wavelength vs absorbance plotting
+  - Multiple sample comparison
+  - Optical property analysis
+- **Output**: Absorption spectra comparison plots
 
-## 📊 Analysis Capabilities
+## Development
 
-### Raman Spectroscopy Module
-- Peak identification and fitting
-- Background subtraction
-- Intensity normalization
-- D-band and G-band analysis for carbon materials
-- Defect characterization
-
-### Optical Properties Modules
-- Absorption coefficient calculation
-- Band gap estimation
-- Transmittance/reflectance analysis
-- Optical conductivity calculations
-
-## 🛠️ Development
-
-### Building from Source
-To build the executable yourself:
-
+### Building the Executable
+To create a standalone executable:
 ```bash
 python build_exe.py
 ```
 
-The build script uses PyInstaller to create a standalone executable.
+### Dependencies
+- PyQt5 >= 5.15.0
+- pandas >= 1.3.0
+- numpy >= 1.21.0
+- matplotlib >= 3.4.0
+- scipy >= 1.7.0
+- qfluentwidgets >= 0.1.0
 
-### Adding New Features
-1. Create new analysis modules in the `pages/` directory
-2. Follow the existing pattern for page structure
-3. Register new pages in `1Dtool.py`
-4. Test thoroughly before committing
+## Future Development
 
-## 🤝 Contributing
+This tool is under active development. Planned features include:
+- Enhanced data processing algorithms
+- Additional spectroscopy techniques
+- Improved data export options
+- More customization features
 
-Contributions are welcome! Here's how you can help:
+## License
 
-1. **Report bugs** - Open an issue with detailed information
-2. **Suggest features** - Share your ideas for improvement
-3. **Submit pull requests** - Contribute code improvements
-4. **Improve documentation** - Help make the tool more accessible
-
-### Development Guidelines
-- Follow PEP 8 style guidelines
-- Add docstrings to all functions and classes
-- Include tests for new functionality
-- Update documentation when adding features
-
-## 📝 Citation
-
-If you use this tool in your research, please consider citing:
-
-```
-[Citation information will be added]
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📞 Contact
-
-For questions, suggestions, or collaboration opportunities:
-- **GitHub Issues**: [https://github.com/dachuanx/cnt_raman_tool/issues](https://github.com/dachuanx/cnt_raman_tool/issues)
-- **Email**: shidachuanx@126.com
-
-## 🔄 Status
-
-**🚧 Active Development** - This project is under continuous development with regular updates and improvements planned.
-
-### Recent Updates
-- Initial release with core analysis modules
-- Windows executable available
-- Multi-page interface implementation
-
-### Planned Features
-- [ ] Additional spectroscopy techniques
-- [ ] Machine learning integration for pattern recognition
-- [ ] Cloud data storage and sharing
-- [ ] Plugin system for extensibility
-- [ ] More export formats and reporting tools
+This project is available for academic and research use.
 
 ---
 
-*Last Updated: April 2024*  
-*Version: 1.0.0*
+*Last Updated: April 2024*
